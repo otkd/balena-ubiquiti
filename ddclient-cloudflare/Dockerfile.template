@@ -1,8 +1,8 @@
-FROM balenalib/%%RESIN_MACHINE_NAME%%-alpine:3.10
+FROM balenalib/%%RESIN_MACHINE_NAME%%-alpine:3.15
 
 WORKDIR /usr/src/app
 
-ENV DDCLIENT_VERSION=ab706ccae039cc5144c6ef77700285f5c1c4645e
+ENV DDCLIENT_VERSION=89c2230adaa02fea758322011e0c0c4135c68060
 RUN install_packages perl git wget curl make gcc openssl perl-dev musl-dev openssl-dev zlib-dev perl-app-cpanminus
 RUN cpanm Data::Validate::IP Net::SSLeay IO::Socket::SSL
 RUN git clone https://github.com/ddclient/ddclient.git ddclient-cloudflare \
